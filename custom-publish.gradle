@@ -1,0 +1,36 @@
+// // custom-publish.gradle
+
+// apply plugin: 'maven-publish'
+
+// publishing {
+//     publications {
+//         mavenJava(MavenPublication) {
+//             from components.java
+//             version = "20"
+
+//             // Customize POM details as needed
+//             pom {
+//                 description = "This library is used for adding flutter module to native Android and iOS application"
+//                 url = "https://github.com/kaxp/flutter_add_to_app_maven"
+//                 scm {
+//                     connection = "scm:git:git://github.com/kaxp/flutter_add_to_app_maven.git"
+//                     developerConnection = "scm:git:ssh://github.com:kaxp/flutter_add_to_app_maven.git"
+//                     url = "http://github.com/kaxp/flutter_add_to_app_maven/tree/master"
+//                 }
+//                 licenses {
+//                     license {
+//                         name = "The Apache Software License, Version 2.0"
+//                         url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+//                     }
+//                 }
+//                 developers {
+//                     developer {
+//                         name = "Kapil Sahu"
+//                         email = "kapilsahu232@gmail.com"
+//                         url = "https://www.kapilsahu.com"
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
