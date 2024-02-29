@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/services.dart';
 import 'package:kapil_add_to_app_flutter/constants/spacing_constants.dart';
 import 'package:kapil_add_to_app_flutter/injection_container.dart';
 import 'package:kapil_add_to_app_flutter/modules/product/blocs/product_listing_bloc.dart';
@@ -49,22 +50,7 @@ class _ProductListingPageState extends State<ProductListingPage> {
           appBar: CustomAppBar(
             leading: IconButton(
               onPressed: () {
-                //TODO(kaxp): Check if we need to clear search here
-                if (state is ProductListingSearchEnabled) {
-                  if (_textController.text.isEmpty) {
-                    _bloc.onSearchClear();
-                    return;
-                  }
-
-                  _textController.text = '';
-                  // fetch default product listing
-                  _bloc.getProductListings(
-                    categoryId: state.selectedCatId,
-                    searchQuery: '',
-                  );
-                } else {
-                  // close app
-                }
+                SystemChannels.platform.invokeMethod('SystemNavigator.pop');
               },
               icon: AppIcons.icBackArrow(
                 width: kSpacingLarge,
